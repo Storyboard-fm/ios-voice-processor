@@ -239,9 +239,10 @@ public class VoiceProcessor {
         sampleRate_ = sampleRate
 
         do {
-            try AVAudioSession.sharedInstance().setCategory(
-                    AVAudioSession.Category.playAndRecord,
-                    options: [.mixWithOthers, .defaultToSpeaker, .allowBluetooth])
+// Take OUT this code because it screws up the session since it doesn't set a mode. - AG 2024-03-08
+//            try AVAudioSession.sharedInstance().setCategory(
+//                    AVAudioSession.Category.playAndRecord,
+//                    options: [.mixWithOthers, .defaultToSpeaker, .allowBluetooth])
             try AVAudioSession.sharedInstance().setActive(
                     true,
                     options: .notifyOthersOnDeactivation)
