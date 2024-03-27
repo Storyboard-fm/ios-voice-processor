@@ -238,17 +238,17 @@ public class VoiceProcessor {
         frameLength_ = frameLength
         sampleRate_ = sampleRate
 
-        do {
-// Take OUT this code because it screws up the session since it doesn't set a mode. - AG 2024-03-08
-//            try AVAudioSession.sharedInstance().setCategory(
-//                    AVAudioSession.Category.playAndRecord,
-//                    options: [.mixWithOthers, .defaultToSpeaker, .allowBluetooth])
-            try AVAudioSession.sharedInstance().setActive(
-                    true,
-                    options: .notifyOthersOnDeactivation)
-        } catch {
-            throw VoiceProcessorRuntimeError("Unable to capture audio session.")
-        }
+//        do {
+//// Take OUT this code because it screws up the session since it doesn't set a mode. - AG 2024-03-08
+////            try AVAudioSession.sharedInstance().setCategory(
+////                    AVAudioSession.Category.playAndRecord,
+////                    options: [.mixWithOthers, .defaultToSpeaker, .allowBluetooth])
+//            try AVAudioSession.sharedInstance().setActive(
+//                    true,
+//                    options: .notifyOthersOnDeactivation)
+//        } catch {
+//            throw VoiceProcessorRuntimeError("Unable to capture audio session.")
+//        }
 
         var format = AudioStreamBasicDescription()
         format.mSampleRate = Float64(sampleRate)
